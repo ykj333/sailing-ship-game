@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+}
+
+#game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 2;
+    max-width: 300px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #4a9df5;
+    text-align: center;
+}
+
+#controls {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #4a9df5;
+    padding-bottom: 10px;
+}
+
+#controls p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#controls ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+#controls li {
+    margin-bottom: 5px;
+}
+
+#stats {
+    font-size: 14px;
+}
+
+#stats p {
+    margin-bottom: 5px;
+}
+
+#stats span {
+    font-weight: bold;
+    color: #4a9df5;
+}
+
+/* 로딩 화면 */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity 0.5s ease;
+}
+
+#loading-text {
+    color: #4a9df5;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.loading-bar-container {
+    width: 300px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4a9df5;
+    transition: width 0.3s ease;
+}

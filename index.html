@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항해 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="info">
+        <h1>항해 게임</h1>
+        <div id="controls">
+            <p>조작 방법:</p>
+            <ul>
+                <li>W / ↑: 전진</li>
+                <li>S / ↓: 후진</li>
+                <li>A / ←: 좌회전</li>
+                <li>D / →: 우회전</li>
+                <li>스페이스바: 돛 올리기/내리기</li>
+            </ul>
+        </div>
+        <div id="stats">
+            <p>속도: <span id="speed">0</span> 노트</p>
+            <p>방향: <span id="direction">북</span></p>
+            <p>바람: <span id="wind">0</span> 노트</p>
+        </div>
+    </div>
+    <div id="game-container"></div>
+
+    <!-- Three.js 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/objects/Water.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/objects/Sky.js"></script>
+
+    <!-- 게임 스크립트 -->
+    <script src="js/utils.js"></script>
+    <script src="js/ship.js"></script>
+    <script src="js/ocean.js"></script>
+    <script src="js/game.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
