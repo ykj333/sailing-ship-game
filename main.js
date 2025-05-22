@@ -1,5 +1,38 @@
 // 메인 게임 초기화 및 실행
 document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const bodyElement = document.body;
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            bodyElement.classList.add('dark-mode');
+            if (themeToggleButton) themeToggleButton.textContent = 'Switch to Light Mode';
+        } else {
+            bodyElement.classList.remove('dark-mode');
+            if (themeToggleButton) themeToggleButton.textContent = 'Switch to Dark Mode';
+        }
+    }
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('light'); // Default to light theme, body starts without dark-mode class
+    }
+
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            if (bodyElement.classList.contains('dark-mode')) {
+                applyTheme('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                applyTheme('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+
     // 로딩 화면 생성
     function createLoadingScreen() {
         const loadingScreen = document.createElement('div');

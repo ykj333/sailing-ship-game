@@ -4,11 +4,12 @@
     box-sizing: border-box;
 }
 
+/* Light Theme (Default) */
 body {
     font-family: 'Arial', sans-serif;
     overflow: hidden;
-    background-color: #000;
-    color: #fff;
+    background-color: #f0f0f0; /* Light background */
+    color: #333333; /* Dark text */
 }
 
 #game-container {
@@ -24,9 +25,11 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff; /* Light background for info panel */
+    color: #333333; /* Dark text for info panel */
     padding: 15px;
     border-radius: 10px;
+    border: 1px solid #cccccc; /* Light border for info panel */
     z-index: 2;
     max-width: 300px;
 }
@@ -34,19 +37,20 @@ body {
 h1 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #4a9df5;
+    color: #007bff; /* Heading color for light theme */
     text-align: center;
 }
 
 #controls {
     margin-bottom: 15px;
-    border-bottom: 1px solid #4a9df5;
+    border-bottom: 1px solid #cccccc; /* Light border for controls */
     padding-bottom: 10px;
 }
 
 #controls p {
     font-weight: bold;
     margin-bottom: 5px;
+    /* Text color will be inherited from body, which is #333333 */
 }
 
 #controls ul {
@@ -64,21 +68,52 @@ h1 {
 
 #stats p {
     margin-bottom: 5px;
+    /* Text color will be inherited from body */
 }
 
 #stats span {
     font-weight: bold;
-    color: #4a9df5;
+    color: #007bff; /* Link/interactive element color for light theme */
 }
 
-/* 로딩 화면 */
+/* Dark Theme */
+body.dark-mode {
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode #info {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for info panel */
+    color: #ffffff; /* Light text for info panel */
+    border: 1px solid #444444; /* Optional: slightly lighter border for dark mode */
+}
+
+body.dark-mode h1 {
+    color: #4a9df5; /* Heading color for dark theme */
+}
+
+body.dark-mode #controls {
+    border-bottom: 1px solid #4a9df5; /* Dark border for controls */
+}
+
+body.dark-mode #controls p {
+    /* Text color will be inherited from body.dark-mode, which is #ffffff */
+}
+
+body.dark-mode #stats span {
+    color: #4a9df5; /* Link/interactive element color for dark theme */
+}
+
+/* Loading Screen Styles */
+
+/* Default (Dark theme) styles for loading screen elements */
 #loading-screen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +131,7 @@ h1 {
 .loading-bar-container {
     width: 300px;
     height: 20px;
-    background-color: #333;
+    background-color: #333333;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -106,4 +141,21 @@ h1 {
     width: 0%;
     background-color: #4a9df5;
     transition: width 0.3s ease;
+}
+
+/* Light theme overrides for loading screen elements */
+body:not(.dark-mode) #loading-screen {
+    background-color: #f0f0f0;
+}
+
+body:not(.dark-mode) #loading-text {
+    color: #007bff;
+}
+
+body:not(.dark-mode) .loading-bar-container {
+    background-color: #dddddd;
+}
+
+body:not(.dark-mode) .loading-bar {
+    background-color: #007bff;
 }
